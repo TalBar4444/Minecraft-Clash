@@ -1,7 +1,5 @@
 package com.example.myapp1;
 
-import android.util.Log;
-
 import java.util.Random;
 
 public class GameLogic {
@@ -57,8 +55,6 @@ public class GameLogic {
         this.gameBoard = gameBoard;
         for(int i =0; i < gameBoard.length; i++) {
             for(int j = 0; j < gameBoard[i].length;j++) {
-                Log.d("length", String.format("gameBoard.length = %d,gameBoard[i].length = %d \n",gameBoard.length, gameBoard[i].length));
-                //Log.d("TAG", String.format("row = %d, col = %d \n", i,j));
                 gameBoard[i][j] = 0;
             }
         }
@@ -91,11 +87,6 @@ public class GameLogic {
         return this;
     }
 
-    public GameLogic setScore(int score) {
-        this.score = score;
-        return this;
-    }
-
     public void turnLeftPlayer() {
         if (playerPlace > 0) {
             playerBoard[playerPlace] = 0;
@@ -111,16 +102,23 @@ public class GameLogic {
             playerBoard[playerPlace] = 1;
         }
     }
-
-    public void refreshGameBoard(){
-        for (int i = 0 ; i < boardRows-1 ; i++)
-            System.arraycopy(gameBoard[i],0,gameBoard[i+1] ,0, boardCols);
-
-        for (int i = 0; i < boardCols; i++)
-            gameBoard[0][i] = 0;;
-
+    public void putEnemy(){
         int rand = new Random().nextInt(boardCols);
         gameBoard[0][rand] = ENEMY;
+    }
+
+    public boolean refreshGameBoard() {
+        for (int i = boardRows - 1; i > 0; i--)
+            System.arraycopy(gameBoard[i - 1], 0, gameBoard[i], 0, boardCols);
+
+        for (int i = 0; i < boardCols; i++)
+            gameBoard[0][i] = 0;
+
+        for(int j = 0; j < boardCols; j++){
+            if(gameBoard[boardRows/2][j] == ENEMY)
+                return true;
+        }
+        return false;
     }
 
     public boolean collisionTest(int[] arrayToTest){
@@ -128,7 +126,7 @@ public class GameLogic {
             reduceLife();
             return true;
         }
-        score++;
+        //score++;
         return false;
     }
     public void reduceLife(){

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -38,22 +39,21 @@ public class ActivityGame extends AppCompatActivity {
     private int rows ;
     private int cols ;
 
-    private final int SPEED = 800;
+    private final int SPEED = 500;
     private MaterialButton game_BTN_newGame;
 
-    private Vibrator v;
+    private Vibrator vib;
 
     private boolean isGameOver;
     private boolean isGameStart;
 
     private Timer timer = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         findViews();
         isGameOver = false;
@@ -106,7 +106,6 @@ public class ActivityGame extends AppCompatActivity {
         game.setGameBoard(new int[game.getBoardRows()][game.getBoardCols()])
                 .setPlayerBoard(new int[game.getBoardCols()])
                 .setPlayerPlace(game.getBoardCols()/2);
-                //.setScore(0);
     }
 
     private void findViews() {
@@ -126,7 +125,6 @@ public class ActivityGame extends AppCompatActivity {
                         findViewById(R.id.game_IMG_creeper1),
                         findViewById(R.id.game_IMG_creeper2),
                         findViewById(R.id.game_IMG_creeper3),
-                  //      findViewById(R.id.game_IMG_creeper4),
 
                 },
                 {
@@ -178,11 +176,9 @@ public class ActivityGame extends AppCompatActivity {
     }
 
     private void turnPlayer(boolean direction) {
-        //Log.d("TAG", String.format("The value of name is: %b ", direction));
         if (direction) {
             game.turnLeftPlayer();
         }
-
         else
             game.turnRightPlayer();
         updatePlayer();
@@ -207,12 +203,13 @@ public class ActivityGame extends AppCompatActivity {
         for (AppCompatImageView heart: game_hearts) {
             heart.setVisibility(View.INVISIBLE);
         }
-        for (int i = 0; i < game.getLife(); i++) {
+        for (int i = 0 ; i < game.getLife() ;  i++) {
             game_hearts.get(i).setVisibility(View.VISIBLE);
         }
     }
 
     private void startGame() {
+        final boolean[] first = {true};
         isGameStart = true;
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -221,23 +218,29 @@ public class ActivityGame extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
                         int[] endOfBoard = new int [game.getBoardCols()];
                         System.arraycopy(game.getGameBoard()[game.getBoardRows()-1], 0,endOfBoard , 0, game.getBoardCols());
                         if(game.collisionTest(endOfBoard)){
                             Toast.makeText(ActivityGame.this, "BOOM!", Toast.LENGTH_SHORT).show();
-                            v.vibrate(400);
+                            vib.vibrate(400);
                             updateLife();
                         }
-                        if(game.getLife() == 0) {
+                        if (game.getLife() == 0) {
                             gameOver();
                         }
-                        game.refreshGameBoard();
+                        if(game.refreshGameBoard() || first[0]) {
+                            game.putEnemy();
+
+                        }
+                        first[0] = false;
                         updateGameBoard();
                     }
                 });
             }
         }, 0, SPEED);
     }
+
 
     private void gameOver(){
         isGameOver = true;
