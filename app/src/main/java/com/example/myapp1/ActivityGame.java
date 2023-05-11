@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
 import com.google.android.material.button.MaterialButton;
@@ -26,6 +27,9 @@ public class ActivityGame extends AppCompatActivity {
 
     private ArrayList<AppCompatImageView> game_hearts;
 
+    private AppCompatTextView score;
+
+    private AppCompatTextView distance;
     private ArrayList<LinearLayoutCompat> linearLayouts;
     private ArrayList<AppCompatImageView> player;
     private AppCompatImageView[][] game_board_IMG_creeper;
@@ -53,9 +57,12 @@ public class ActivityGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        findViews();
+        Bundle bundleMode = getIntent().getBundleExtra(ActivityMain.KEY_MODE);
+        Bundle bundleLevel = getIntent().getBundleExtra(ActivityMain.KEY_LEVEL);
         vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
-        findViews();
+
         isGameOver = false;
         createGame();
         //setPlayer();
@@ -110,14 +117,16 @@ public class ActivityGame extends AppCompatActivity {
 
     private void findViews() {
         game_hearts = new ArrayList<>(
-            Arrays.asList(findViewById(R.id.game_IMG_heart1),
-                    findViewById(R.id.game_IMG_heart2),
-                    findViewById(R.id.game_IMG_heart3)));
+                Arrays.asList(findViewById(R.id.game_IMG_heart1),
+                        findViewById(R.id.game_IMG_heart2),
+                        findViewById(R.id.game_IMG_heart3)));
 
         linearLayouts = new ArrayList<>(
                 Arrays.asList(findViewById(R.id.game_LL1),
                         findViewById(R.id.game_LL2),
-                        findViewById(R.id.game_LL3)));
+                        findViewById(R.id.game_LL3),
+                        findViewById(R.id.game_LL4),
+                        findViewById(R.id.game_LL5)));
 
 
         game_board_IMG_creeper = new AppCompatImageView[][]{
@@ -125,29 +134,54 @@ public class ActivityGame extends AppCompatActivity {
                         findViewById(R.id.game_IMG_creeper1),
                         findViewById(R.id.game_IMG_creeper2),
                         findViewById(R.id.game_IMG_creeper3),
+                        findViewById(R.id.game_IMG_creeper4),
+                        findViewById(R.id.game_IMG_creeper5),
 
                 },
                 {
-                        findViewById(R.id.game_IMG_creeper4),
-                        findViewById(R.id.game_IMG_creeper5),
                         findViewById(R.id.game_IMG_creeper6),
-                },
-                {
                         findViewById(R.id.game_IMG_creeper7),
                         findViewById(R.id.game_IMG_creeper8),
                         findViewById(R.id.game_IMG_creeper9),
+                        findViewById(R.id.game_IMG_creeper10),
                 },
                 {
-                        findViewById(R.id.game_IMG_creeper10),
                         findViewById(R.id.game_IMG_creeper11),
                         findViewById(R.id.game_IMG_creeper12),
+                        findViewById(R.id.game_IMG_creeper13),
+                        findViewById(R.id.game_IMG_creeper14),
+                        findViewById(R.id.game_IMG_creeper15),
+                },
+                {
+
+                        findViewById(R.id.game_IMG_creeper16),
+                        findViewById(R.id.game_IMG_creeper17),
+                        findViewById(R.id.game_IMG_creeper18),
+                        findViewById(R.id.game_IMG_creeper19),
+                        findViewById(R.id.game_IMG_creeper20),
+                },
+                {
+                        findViewById(R.id.game_IMG_creeper21),
+                        findViewById(R.id.game_IMG_creeper22),
+                        findViewById(R.id.game_IMG_creeper23),
+                        findViewById(R.id.game_IMG_creeper24),
+                        findViewById(R.id.game_IMG_creeper25),
+                },
+                {
+                        findViewById(R.id.game_IMG_creeper26),
+                        findViewById(R.id.game_IMG_creeper27),
+                        findViewById(R.id.game_IMG_creeper28),
+                        findViewById(R.id.game_IMG_creeper29),
+                        findViewById(R.id.game_IMG_creeper30),
                 },
         };
 
         player = new ArrayList<>(
                 Arrays.asList(findViewById(R.id.game_IMG_steve1),
                         findViewById(R.id.game_IMG_steve2),
-                        findViewById(R.id.game_IMG_steve3)));
+                        findViewById(R.id.game_IMG_steve3),
+                        findViewById(R.id.game_IMG_steve4),
+                        findViewById(R.id.game_IMG_steve5)));
 
         game_BTN_left = findViewById(R.id.game_BTN_left);
         game_BTN_right = findViewById(R.id.game_BTN_right);
@@ -253,5 +287,4 @@ public class ActivityGame extends AppCompatActivity {
     }
 
 }
-
 

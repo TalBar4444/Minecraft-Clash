@@ -29,14 +29,39 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="0.6">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@id/game_LBL_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$$: dddd"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.7">
+                android:layout_weight="0.6">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@id/game_LBL_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Distance:"
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/game_IMG_heart3"
@@ -94,7 +119,7 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper4"
+                    android:id="@+id/game_IMG_creeper6"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -104,7 +129,7 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper7"
+                    android:id="@+id/game_IMG_creeper11"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -114,7 +139,27 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper10"
+                    android:id="@+id/game_IMG_creeper16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper21"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper26"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -145,7 +190,7 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper5"
+                    android:id="@+id/game_IMG_creeper7"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -155,7 +200,7 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper8"
+                    android:id="@+id/game_IMG_creeper12"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -165,7 +210,27 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper11"
+                    android:id="@+id/game_IMG_creeper17"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper22"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper27"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -195,7 +260,67 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper6"
+                    android:id="@+id/game_IMG_creeper8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper13"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper23"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper28"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/game_LL4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper4"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -215,7 +340,7 @@
                     app:srcCompat="@drawable/img_creeper" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/game_IMG_creeper12"
+                    android:id="@+id/game_IMG_creeper14"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="2dp"
@@ -223,6 +348,107 @@
                     android:padding="5dp"
                     android:visibility="invisible"
                     app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper24"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper29"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/game_LL5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper10"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper20"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper25"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/game_IMG_creeper30"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/img_creeper" />
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -232,7 +458,7 @@
             android:id="@+id/player_LL"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2">
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/game_IMG_steve1"
@@ -253,6 +479,7 @@
                 android:layout_weight="1"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
+                android:visibility="invisible"
                 app:srcCompat="@drawable/img_steve" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -263,8 +490,30 @@
                 android:layout_weight="1"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_steve" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_steve4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
                 android:visibility="invisible"
                 app:srcCompat="@drawable/img_steve" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/game_IMG_steve5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/img_steve" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -299,7 +548,6 @@
                 app:iconSize="60dp"
                 app:iconTint="#8C113C" />
 
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -308,6 +556,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true">
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/game_BTN_newGame"
             android:layout_width="match_parent"
@@ -316,8 +565,7 @@
             app:cornerRadius="30dp"
             android:backgroundTint="#8C113C"
             android:visibility="gone"
-            android:layout_marginBottom="10dp"
-            />
+            android:layout_marginBottom="10dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
