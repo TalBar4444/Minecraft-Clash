@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/player_info_TXT_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:layout_marginStart="2dp"
+                android:text="@string/nickname"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/player_info_TXT_score"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:layout_marginStart="2dp"
+                android:text="@string/score"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/player_info_TXT_distance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|top"
+                android:layout_marginStart="2dp"
+                tools:text="@string/distance"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>

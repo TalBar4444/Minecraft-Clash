@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Minecraft Clash</string>
+    <string name="new_game">New Game</string>
+    <string name="table_score">Table Score</string>
+    <string name="settings">SETTINGS</string>
+    <string name="back_to_menu">Back To Menu</string>
+    <string name="nickname">Nickname</string>
+    <string name="done">Done</string>
+    <string name="score">Score</string>
+    <string name="distance">Distance</string>
+
+
+
 </resources>

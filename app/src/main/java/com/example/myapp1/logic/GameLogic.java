@@ -1,4 +1,6 @@
-package com.example.myapp1;
+package com.example.myapp1.logic;
+
+import androidx.annotation.NonNull;
 
 import java.util.Random;
 
@@ -10,9 +12,13 @@ public class GameLogic {
     private int boardRows;
     private int boardCols;
     private int life;
-    static final int ENEMY = 1;
 
     private int score;
+    private int distance;
+    public static final int NONE = 0;
+    public static final int CREEPER = 1;
+    public static final int DIAMOND = 2;
+
 
     public GameLogic(){}
     public GameLogic(int row, int col, int life){
@@ -50,17 +56,20 @@ public class GameLogic {
         return score;
     }
 
+    public int getDistance() {
+        return distance;
+    }
 
-    public GameLogic setGameBoard(int[][] gameBoard) {
+
+    public GameLogic setGameBoard(@NonNull int[][] gameBoard) {
         this.gameBoard = gameBoard;
         for(int i =0; i < gameBoard.length; i++) {
             for(int j = 0; j < gameBoard[i].length;j++) {
-                gameBoard[i][j] = 0;
+                gameBoard[i][j] = NONE;
             }
         }
         return this;
     }
-
     public GameLogic setPlayerBoard(int[] playerBoard) {
         this.playerBoard = playerBoard;
         return this;
@@ -87,6 +96,15 @@ public class GameLogic {
         return this;
     }
 
+    public GameLogic setScore(int score) {
+        this.score = score;
+        return this;
+    }
+
+    public void setDistance(int distance){
+        this.distance=distance;
+    }
+
     public void turnLeftPlayer() {
         if (playerPlace > 0) {
             playerBoard[playerPlace] = 0;
@@ -102,36 +120,43 @@ public class GameLogic {
             playerBoard[playerPlace] = 1;
         }
     }
-    public void putEnemy(){
-        int rand = new Random().nextInt(boardCols);
-        gameBoard[0][rand] = ENEMY;
-    }
 
-    public boolean refreshGameBoard() {
+    public void refreshGameBoard() {
         for (int i = boardRows - 1; i > 0; i--)
             System.arraycopy(gameBoard[i - 1], 0, gameBoard[i], 0, boardCols);
 
         for (int i = 0; i < boardCols; i++)
-            gameBoard[0][i] = 0;
+            gameBoard[0][i] = NONE;
 
-        for(int j = 0; j < boardCols; j++){
-            if(gameBoard[boardRows/2][j] == ENEMY)
-                return true;
-        }
-        return false;
+
+        int rand = new Random().nextInt(boardCols);
+        boolean object = true;
+        if (score%4 == 0)
+            object = new Random().nextBoolean();
+        if (object)
+            gameBoard[0][rand] = CREEPER;
+        else
+            gameBoard[0][rand] = DIAMOND;
     }
 
-    public boolean collisionTest(int[] arrayToTest){
-        if(arrayToTest[playerPlace] == ENEMY){
+    public boolean collisionTest(@NonNull int[] arrayToTest){
+        if(arrayToTest[playerPlace] == CREEPER){
             reduceLife();
             return true;
         }
-        //score++;
+        if(arrayToTest[playerPlace] == DIAMOND){
+            score+=4;
+        }
+        score++;
         return false;
     }
     public void reduceLife(){
         if (life > 0){
             life--;
         }
+    }
+
+    public void odometer(){
+        distance +=2;
     }
 }
