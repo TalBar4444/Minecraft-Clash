@@ -5,8 +5,8 @@ In this game, you take control of **Steve**, who must dodge falling **Creepers**
 
 ## ⚙️ Featurs
 
-- **Leaderboard**
 - **Leaderboard:** At the end of the game, enter your name. If your score is high enough, you'll appear in the **Winners Table**.
+
 Players can customize the game experience to suit their style:
 
 - **Control Modes:**
@@ -27,8 +27,22 @@ Players can customize the game experience to suit their style:
 
 ## 📸 Screenshots
 
-<!-- ![Gameplay](screenshots/home.png) -->
-<!-- ![Settings](screenshots/settings.png) -->
+<p align="start">
+  <img src="screenshots/home.png" alt="home screen" width="270"/>
+</p>
+<p align="start">
+  <img src="screenshots/controllermode.png" alt="controller mode" width="270"/>
+</p>
+<p align="start">
+  <img src="screenshots/tiltmode.png" alt="tiltmode" width="270"/>
+</p>
+<p align="start">
+  <img src="screenshots/table.png" alt="winners table" width="270"/>
+</p>
+
+<p align="start">
+  <img src="screenshots/settings.png" alt="settings" width="270"/>
+</p>
 
 ## License
 MIT License
