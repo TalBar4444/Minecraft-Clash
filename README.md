@@ -1,6 +1,6 @@
 # Minecraft Clash
 
-**Minecraft Clash** is a fun and fast-paced Android game built with Java in Android Studio. 
+**Minecraft Clash** is a fun and fast-paced Android game.
 In this game, you take control of **Steve**, who must dodge falling **Creepers**, collect **Diamonds** to earn points.
 
 ## ⚙️ Featurs
@@ -48,7 +48,6 @@ Players can customize the game experience to suit their style:
 MIT License
 
 Copyright (c) 2025 Tal Bar
-
 Permission is hereby granted, free of charge, to any person obtaining a copy.
 
 
