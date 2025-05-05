@@ -33,15 +33,11 @@ Players can customize the game experience to suit their style:
 <p align="start">
   <img src="screenshots/controllermode.png" alt="controller mode" width="270"/>
 </p>
-<p align="start">
+<p align="start" text="tilt mode">
   <img src="screenshots/tiltmode.png" alt="tiltmode" width="270"/>
 </p>
 <p align="start">
   <img src="screenshots/table.png" alt="winners table" width="270"/>
-</p>
-
-<p align="start">
-  <img src="screenshots/settings.png" alt="settings" width="270"/>
 </p>
 
 ## License
