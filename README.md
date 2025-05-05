@@ -31,12 +31,12 @@ Players can customize the game experience to suit their style:
   <img src="screenshots/home.png" alt="home screen" width="270"/>
 </p>
 
-### controllers mode
+### Controllers mode
 <p align="start">
   <img src="screenshots/controllermode.png" alt="controller mode" width="270"/>
 </p>
 
-### tilt mode
+### Tilt mode
 <p align="start">
   <img src="screenshots/tiltmode.png" alt="tiltmode" width="270"/>
 </p>
